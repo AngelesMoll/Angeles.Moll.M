@@ -1,82 +1,17 @@
-.logo{
-    margin-top: 20px;
-  }
-  
-  
-  /* body */
-  body{
-    font-family: Georgia, "Times New Roman", Times, serif;
-    color: white;
-    background-color:grey;
-    padding-left: 50px;
-    background: linear-gradient(70deg, rgb(104, 87, 87), white);
-  }
-  
-  .container {
-    width: 250px;
-    height: 250px;
-    margin: 20px;
-    border: 10px solid gray;
-  }
-  
-  .item{
-  background:rgb(104, 87, 87);
-  width: 250px;
-  height: 250px;
-  }
-  
-  .container:hover .item{
-    transform: translatex(50px);
-  }
-  
-  /* header */
-  .header{
-    border-bottom: 1px black solid;
-    grid-area: header;
-  
-  }
-  
-  .header ul {
-      list-style-type: none;
-      
-    }
-  
-  .header li {
-    background-color: #F6E3CA;
-    border: #D7C8B6 2px solid;
-    display: inline;
-    margin-right: 20px;
-    
-  }
-  
-  .header a {
-    color: black;
-    padding: 0 4px;
-    text-decoration: none;
-  }
-  
-  .img{
-    padding-left: 50px;
-    padding-top: 30px;
-    
-  }
-  
-   /* body */
-   body{
-    font-family: Georgia, "Times New Roman", Times, serif;
-    color: white;
-    background-color:grey;
-    padding-left: 50px;
-  }
-  
-  img{
-    padding-left: 50px;
-  }
-  h1 {
-      font-family: Georgia, 'Times New Roman', Times, serif;
-      
-  }
-  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body */
+.body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: white;
+  background-color: grey;
+  padding-left: 50px;
+  background: linear-gradient(70deg, rgb(104, 87, 87), white);
+
   .grilla {
     /* CLASE PADRE: grilla SOBRE ESA APLICO DISPLAY GRID , le declaro al padre como se va a mostrar*/
     display: grid;
@@ -85,9 +20,9 @@
     grid-template-rows: 3 fr;
     /* tengo q poner la misma cantidad de filas y de comillas que declare en  grid-template-rows (4) */
     grid-template-areas:
-        "header"
-        "main"
-        "footer "
+      "header"
+      "main"
+      "footer "
     ;
     /* espacios entre cada fila */
     grid-row-gap: 3%;
@@ -95,46 +30,94 @@
     justify-items: stretch;
     /* ACOMODO EL CONTENIDO DENTRO DE LA CAJA EJE VERTICAL */
     align-items: stretch;
-  } 
-  
-  .main{
-    grid-area: main;
+
+    .main {
+      grid-area: main;
+      .nosotros {
+        display: flex;
+        justify-content: start;
+      }
+    }
   }
-  
-  .nosotros{
-    display: flex;
-    justify-content: space-evenly;
+}
+
+// .container {
+//   width: 250px;
+//   height: 250px;
+//   margin: 20px;
+//   border: 10px solid gray;
+// }
+
+// .item {
+//   background: rgb(104, 87, 87);
+//   width: 250px;
+//   height: 250px;
+// }
+
+// .container:hover .item {
+//   transform: translatex(50px);
+// }
+
+/* header */
+
+.header {
+  border-bottom: 1px black solid;
+  grid-area: header;
+
+  .logo {
+    margin-top: 20px;
+
+    li {
+      background-color: #F6E3CA;
+      border: #D7C8B6 2px solid;
+      margin-right: 20px;
+
+
+      a {
+        color: black;
+        padding: 0 4px;
+      }
+    }
   }
-  
-  
-  /* footer */
-  footer{
-    border-top: 1px black solid;
-    grid-area:footer
-  }
-  
-  .footer ul{
-      list-style-type: none;
-  }
-  
-  .footer li {
+}
+
+img {
+  padding-left: 50px;
+}
+
+h1 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+
+/* footer */
+.footer {
+  border-top: 1px black solid;
+  grid-area: footer;
+    ul {
+    list-style-type: none;
+    li {
       background-color: #F6E3CA;
       border: #D7C8B6 2px solid;
       display: inline;
       margin-right: 10px;
+      a {
+        color: black;
+        padding: 0 4px;
+        text-decoration: none;
+      }
     }
-    
-    .footer a {
-      color: black;
-      padding: 0 4px;
-      text-decoration: none;
-    }
-  
-  .copi{
-      text-align: center;
   }
   
-  .img {
-    height: 200px;
-    width: 200;
-  }
+}
+
+
+.copi {
+  text-align: center;
+}
+
+// .img {
+//   height: 200px;
+//   width: 200;
+// }
