@@ -1,0 +1,140 @@
+.logo{
+    margin-top: 20px;
+  }
+  
+  
+  /* body */
+  body{
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: white;
+    background-color:grey;
+    padding-left: 50px;
+    background: linear-gradient(70deg, rgb(104, 87, 87), white);
+  }
+  
+  .container {
+    width: 250px;
+    height: 250px;
+    margin: 20px;
+    border: 10px solid gray;
+  }
+  
+  .item{
+  background:rgb(104, 87, 87);
+  width: 250px;
+  height: 250px;
+  }
+  
+  .container:hover .item{
+    transform: translatex(50px);
+  }
+  
+  /* header */
+  .header{
+    border-bottom: 1px black solid;
+    grid-area: header;
+  
+  }
+  
+  .header ul {
+      list-style-type: none;
+      
+    }
+  
+  .header li {
+    background-color: #F6E3CA;
+    border: #D7C8B6 2px solid;
+    display: inline;
+    margin-right: 20px;
+    
+  }
+  
+  .header a {
+    color: black;
+    padding: 0 4px;
+    text-decoration: none;
+  }
+  
+  .img{
+    padding-left: 50px;
+    padding-top: 30px;
+    
+  }
+  
+   /* body */
+   body{
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: white;
+    background-color:grey;
+    padding-left: 50px;
+  }
+  
+  img{
+    padding-left: 50px;
+  }
+  h1 {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      
+  }
+  
+  .grilla {
+    /* CLASE PADRE: grilla SOBRE ESA APLICO DISPLAY GRID , le declaro al padre como se va a mostrar*/
+    display: grid;
+    /* cuantas columnas y filas quiero y de que tamaño cada una */
+    grid-template-columns: 1fr;
+    grid-template-rows: 3 fr;
+    /* tengo q poner la misma cantidad de filas y de comillas que declare en  grid-template-rows (4) */
+    grid-template-areas:
+        "header"
+        "main"
+        "footer "
+    ;
+    /* espacios entre cada fila */
+    grid-row-gap: 3%;
+    /* ACOMODO EL CONTENIDO DENTRO DE LA CAJA HORIZONTALMENTE le pongo al padre pero afecta a todos los hijos todos se van a posicionar al comienzo  de su col*/
+    justify-items: stretch;
+    /* ACOMODO EL CONTENIDO DENTRO DE LA CAJA EJE VERTICAL */
+    align-items: stretch;
+  } 
+  
+  .main{
+    grid-area: main;
+  }
+  
+  .nosotros{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  
+  /* footer */
+  footer{
+    border-top: 1px black solid;
+    grid-area:footer
+  }
+  
+  .footer ul{
+      list-style-type: none;
+  }
+  
+  .footer li {
+      background-color: #F6E3CA;
+      border: #D7C8B6 2px solid;
+      display: inline;
+      margin-right: 10px;
+    }
+    
+    .footer a {
+      color: black;
+      padding: 0 4px;
+      text-decoration: none;
+    }
+  
+  .copi{
+      text-align: center;
+  }
+  
+  .img {
+    height: 200px;
+    width: 200;
+  }
