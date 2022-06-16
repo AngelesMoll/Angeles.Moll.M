@@ -1,123 +1,212 @@
-* {
+// /* Strategy: mobile last */
+//primero van las variables 
+@import "./variables/global";
+@import "./variables/mixins";
+@import "./variables/extends";
+
+// Sections
+@import "./sections/index";
+@import "./sections/header";
+@import "./sections/nosotros";
+@import "./sections/productos";
+@import "./sections/contacto";
+@import "./sections/footer";
+
+body {
+  background-color: $color-blanco;
+}
+
+a {
+  color: $color-azul;
+  text-decoration: none;
+  transition: all $transition-time;
+
+  &:hover {
+    color: $color-azul-claro;
+  }
+}
+
+ul {
+  @include reset-list;
+
+  li {
+    overflow: hidden;
+  }
+}
+
+
+h2 {
+  @include fontstyle(20px);
+  margin-bottom: 10px;
+}
+
+h3 {
+  @include fontstyle(18px);
+  margin-bottom: 10px;
+}
+
+h4 {
+  @include fontstyle(16px);
+}
+
+p {
+  @include fontstyle($line-height: 25px);
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
-/* body */
-.body {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  color: white;
-  background-color: grey;
-  padding-left: 50px;
-  background: linear-gradient(70deg, rgb(104, 87, 87), white);
+button {
+  background: $color-rojo;
+  border: solid 1px $color-rojo;
+  border-radius: 2px;
+  color: $color-blanco;
+  line-height: 35px;
+  padding: 0 20px;
+  transition: all $transition-time;
 
-  .grilla {
-    /* CLASE PADRE: grilla SOBRE ESA APLICO DISPLAY GRID , le declaro al padre como se va a mostrar*/
-    display: grid;
-    /* cuantas columnas y filas quiero y de que tamaño cada una */
-    grid-template-columns: 1fr;
-    grid-template-rows: 3 fr;
-    /* tengo q poner la misma cantidad de filas y de comillas que declare en  grid-template-rows (4) */
-    grid-template-areas:
-      "header"
-      "main"
-      "footer "
-    ;
-    /* espacios entre cada fila */
-    grid-row-gap: 3%;
-    /* ACOMODO EL CONTENIDO DENTRO DE LA CAJA HORIZONTALMENTE le pongo al padre pero afecta a todos los hijos todos se van a posicionar al comienzo  de su col*/
-    justify-items: stretch;
-    /* ACOMODO EL CONTENIDO DENTRO DE LA CAJA EJE VERTICAL */
-    align-items: stretch;
-
-    .main {
-      grid-area: main;
-      .nosotros {
-        display: flex;
-        justify-content: start;
-      }
-    }
+  &:hover {
+    color: $color-rojo;
+    background-color: $color-blanco;
   }
 }
 
-// .container {
-//   width: 250px;
-//   height: 250px;
-//   margin: 20px;
-//   border: 10px solid gray;
-// }
-
-// .item {
-//   background: rgb(104, 87, 87);
-//   width: 250px;
-//   height: 250px;
-// }
-
-// .container:hover .item {
-//   transform: translatex(50px);
-// }
-
-/* header */
-
-.header {
-  border-bottom: 1px black solid;
-  grid-area: header;
-
-  .logo {
-    margin-top: 20px;
-
-    li {
-      background-color: #F6E3CA;
-      border: #D7C8B6 2px solid;
-      margin-right: 20px;
-
-
-      a {
-        color: black;
-        padding: 0 4px;
-      }
-    }
+.page-layout {
+  display: grid;
+  grid: {
+    template-columns: 1fr;
+    auto-rows: auto;
+    template-areas: "header" "main" "footer";
   }
 }
 
-img {
-  padding-left: 50px;
+main {
+  grid-area: main;
 }
 
-h1 {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-
-}
-
-
-/* footer */
-.footer {
-  border-top: 1px black solid;
-  grid-area: footer;
-    ul {
-    list-style-type: none;
-    li {
-      background-color: #F6E3CA;
-      border: #D7C8B6 2px solid;
-      display: inline;
-      margin-right: 10px;
-      a {
-        color: black;
-        padding: 0 4px;
-        text-decoration: none;
-      }
-    }
-  }
-  
-}
-
-
-.copi {
+.fixed-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 70px;
+  background-color: green;
+  width: 35px;
+  height: 35px;
+  color: $color-blanco;
+  font-size: 24px;
+  border-radius: 50%;
   text-align: center;
+  box-shadow: 0 0 4px 0 black;
+  transition: all $transition-time;
+
+  &:hover {
+    width: 41px;
+    height: 41px;
+    right: 17px;
+    bottom: 67px;
+
+    i {
+      line-height: 41px;
+      color: $color-blanco;
+    }
+  }
+
+  i {
+    line-height: 35px;
+  }
 }
 
-// .img {
-//   height: 200px;
-//   width: 200;
-// }
+form {
+  max-width: 600px;
+  margin-bottom: 20px;
+
+  label,
+  input,
+  textarea,
+  select,
+  legend {
+    display: block;
+    width: 100%;
+  }
+
+  label {
+    margin: 5px 0 5px 0;
+  }
+
+  legend {
+    margin-bottom: 10px;
+  }
+
+  input,
+  textarea,
+  select {
+    margin-bottom: 10px;
+    line-height: 24px;
+    border-radius: 2px;
+    border-width: 1px;
+    padding: 0 10px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  h4 {
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+
+/* Bootstrap sobre-escritura */
+
+.navbar-light .navbar-nav {
+  .nav-link {
+    color: $color-azul;
+
+    &:hover {
+      color: $color-azul-claro;
+    }
+  }
+
+  .nav-link.active,
+  .show > .nav-link {
+    text-decoration: underline;
+    color: $color-azul;
+  }
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  &:focus,
+  &:hover {
+    background: none;
+    opacity: 1;
+  }
+}
+
+/* Bootstrap Mobile */
+
+@media (max-width: 767px) {
+  .navbar-brand img {
+    max-width: 75px;
+  }
+}
+
+/* Bootstrap Desktop */
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding: {
+      right: 0.7rem;
+      left: 0.7rem;
+    }
+  }
+}
