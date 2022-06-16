@@ -2,11 +2,11 @@
 
 body {
     @extend %paragraph;
-    background-color: $color-blanco;
+    background-color: $color-grey;
   }
   
   a {
-    color: $color-azul;
+    color: $color-blanco;
     text-decoration: none;
     transition: all $transition-time;
   
@@ -48,17 +48,17 @@ body {
   }
   
   button {
-    background: $color-rojo;
-    border: solid 1px $color-rojo;
+    background: $color-grey-oscuro;
+    border: solid 1px $color-grey-oscuro;
     border-radius: 2px;
-    color: $color-blanco;
+    color: $color-grey;
     line-height: 35px;
     padding: 0 20px;
     transition: all $transition-time;
   
     &:hover {
-      color: $color-rojo;
-      background-color: $color-blanco;
+      color: $color-grey-oscuro;
+      background-color: $color-grey;
     }
   }
   
@@ -82,7 +82,7 @@ body {
     background-color: green;
     width: 35px;
     height: 35px;
-    color: $color-blanco;
+    color: $color-grey;
     font-size: 24px;
     border-radius: 50%;
     text-align: center;
@@ -97,7 +97,7 @@ body {
   
       i {
         line-height: 41px;
-        color: $color-blanco;
+        color: $color-grey;
       }
     }
   
@@ -162,7 +162,7 @@ body {
   
   .navbar-light .navbar-nav {
     .nav-link {
-      color: $color-azul;
+      color: $color-blanco;
   
       &:hover {
         color: $color-azul-claro;
@@ -172,7 +172,7 @@ body {
     .nav-link.active,
     .show > .nav-link {
       text-decoration: underline;
-      color: $color-azul;
+      color: $color-blanco;
     }
   }
   
